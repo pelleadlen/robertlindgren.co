@@ -22,23 +22,33 @@ const ClockBase = () => {
 export default ClockBase;
 
 const Hands = () => {
-  const [hourDegree, setHourDegree] = useState(0);
-  const [minuteDegree, setMinuteDegree] = useState(0);
-  const [secondDegree, setSecondDegree] = useState(0);
+  const getSwedenTime = () => {
+    const now = new Date().toLocaleTimeString("sv-SE", {
+      timeZone: "Europe/Stockholm",
+    });
+
+    const [hour, minute, second] = now.split(/[:\s]/);
+
+    return {
+      hour: ((hour % 12) / 12) * 360,
+      minute: (minute / 60) * 360,
+      second: (second / 60) * 360,
+    };
+  };
+
+  const initialTime = getSwedenTime();
+
+  const [hourDegree, setHourDegree] = useState(initialTime.hour);
+  const [minuteDegree, setMinuteDegree] = useState(initialTime.minute);
+  const [secondDegree, setSecondDegree] = useState(initialTime.second);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const now = new Date();
+      const { hour, minute, second } = getSwedenTime();
 
-      const swedenTime = new Date().toLocaleTimeString("sv-SE", {
-        timeZone: "Europe/Stockholm",
-      });
-
-      const [hour, minute, second] = swedenTime.split(/[:\s]/);
-
-      setHourDegree(((hour % 12) / 12) * 360);
-      setMinuteDegree((minute / 60) * 360);
-      setSecondDegree((second / 60) * 360);
+      setHourDegree(hour);
+      setMinuteDegree(minute);
+      setSecondDegree(second);
     }, 1000);
 
     return () => {
