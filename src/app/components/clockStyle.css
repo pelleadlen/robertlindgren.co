@@ -27,12 +27,12 @@
 }
 
 .hand.minute {
-  width: 2px;
+  width: 4px;
 }
 .hand.second {
   width: 2px;
 }
 
-.hand.minute {
+.hand.hour {
   width: 5px;
 }
