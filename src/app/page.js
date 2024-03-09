@@ -1,4 +1,5 @@
-import ClockBase from "./components/clockBase";
+import ClockNew from "./components/clockNew";
+
 import Footer from "./components/footer";
 
 export default function Home() {
@@ -26,7 +27,7 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <ClockBase />
+      <ClockNew />
       <Footer />
     </main>
   );

@@ -13,6 +13,7 @@ const ClockBase = () => {
           alt="analog clock with book a meeting as time"
           src={Clock}
         />
+
         <Hands />
       </div>
     </div>
@@ -59,7 +60,7 @@ const Hands = () => {
   return (
     <div className="indicator">
       <span
-        className="hand hour h-[100px] md:h[120px] lg:h-[180px]"
+        className="hand hour h-[110px] md:h[120px] lg:h-[180px] "
         style={{ transform: `rotate(${hourDegree}deg)` }}
       />
       <span
