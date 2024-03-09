@@ -57,8 +57,8 @@ const ClockNew = () => {
   };
 
   return (
-    <div className="absolute top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]">
-      <div className="flex rounded-full items-center justify-center relative w-full h-full  text-[64px] ">
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-screen w-screen max-w-[375px] max-h-[375px] md:max-w-[600px] md:max-h-[600px] lg:max-w-[700px] lg:max-h-[700px] xl:max-h-screen xl:max-w-screen ">
+      <div className="flex rounded-full items-center justify-center relative w-full h-full  text-2xl md:text-5xl lg:text-6xl ">
         {labels.map((label, index) => (
           <label
             className=" absolute inset-[40px] text-center"
@@ -74,12 +74,12 @@ const ClockNew = () => {
         {/* Indicator Wrapper */}
         <div className="w-full h-full text-[64px]  flex relative items-center justify-center">
           {/* INDICATOR */}
-          <div className=" h-9 w-9 border-[#FF0000] bg-black border-[5px] rounded-full z-50" />
+          <div className=" h-6 w-6 md:h-9 md:w-9 border-[#FF0000] bg-black border-[2px] md:border-[5px] rounded-full z-50" />
 
           {/* HOUR CET */}
           <div
             style={{ transform: `rotate(${hourRotation}deg)` }}
-            className="bg-black w-[80px] absolute flex items-center justify-center bottom-1/2 origin-bottom rotate-180  h-2/4"
+            className="bg-black w-[80px] absolute flex items-center justify-center bottom-1/2 origin-bottom rotate-180  h-2/4 text-2xl md:text-5xl lg:text-6xl"
           >
             <p className="-rotate-90 text-nowrap">{cetTime}</p>
           </div>
@@ -87,7 +87,7 @@ const ClockNew = () => {
           {/* MINUTE EST */}
           <div
             style={{ transform: `rotate(${minuteRotation}deg)` }}
-            className="bg-black w-[80px] absolute flex items-center justify-center bottom-1/2 origin-bottom   h-2/4"
+            className="bg-black w-[32px] md:w-[48px] lg:w-[80px] absolute flex items-center justify-center bottom-1/2 origin-bottom   h-2/4 text-2xl md:text-5xl lg:text-6xl"
           >
             <p className="-rotate-90 text-nowrap">{estTime}</p>
           </div>
@@ -95,7 +95,7 @@ const ClockNew = () => {
           {/* SECONDS */}
           <div
             style={{ transform: `rotate(${secondRotation}deg)` }}
-            className="bg-[#FF0000] w-[4px] h-[40%]  absolute flex items-center justify-center bottom-1/2 origin-bottom  rotate-[310deg]"
+            className="bg-[#FF0000] w-[2px] md:w-[4px] h-[40%]  absolute flex items-center justify-center bottom-1/2 origin-bottom  rotate-[310deg]"
           ></div>
         </div>
       </div>
