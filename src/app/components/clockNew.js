@@ -4,36 +4,40 @@ import { useState, useEffect } from "react";
 
 const ClockNew = () => {
   const labels = ["O", "O", "K", "A", "M", "E", "E", "T", "I", "N", "G", "B"];
-
   const [cetTime, setCetTime] = useState("");
   const [estTime, setEstTime] = useState("");
   const [secondRotation, setSecondRotation] = useState(0);
   const [minuteRotation, setMinuteRotation] = useState(0);
   const [hourRotation, setHourRotation] = useState(0);
 
+  const calculateTime = () => {
+    const now = new Date();
+
+    const secondsRatio = now.getSeconds() / 60;
+    const minutesRatio = (secondsRatio + now.getMinutes()) / 60;
+    const hoursRatio = (minutesRatio + now.getHours()) / 12;
+
+    setSecondRotation(secondsRatio * 360);
+    setMinuteRotation(minutesRatio * 360);
+    setHourRotation(hoursRatio * 360);
+
+    const cet = new Date().toLocaleTimeString("sv-SE", {
+      timeZone: "Europe/Stockholm",
+      hour12: false,
+    });
+    const est = new Date().toLocaleTimeString("en-US", {
+      timeZone: "America/New_York",
+      hour12: false,
+    });
+
+    setCetTime(cet.split(":").slice(0, -1).join(":") + " CET");
+    setEstTime(est.split(":").slice(0, -1).join(":") + " EST");
+  };
+
   useEffect(() => {
+    calculateTime();
     const interval = setInterval(() => {
-      const now = new Date();
-
-      const secondsRatio = now.getSeconds() / 60;
-      const minutesRatio = (secondsRatio + now.getMinutes()) / 60;
-      const hoursRatio = (minutesRatio + now.getHours()) / 12;
-
-      setSecondRotation(secondsRatio * 360);
-      setMinuteRotation(minutesRatio * 360);
-      setHourRotation(hoursRatio * 360);
-
-      const cet = new Date().toLocaleTimeString("sv-SE", {
-        timeZone: "Europe/Stockholm",
-        hour12: false,
-      });
-      const est = new Date().toLocaleTimeString("en-US", {
-        timeZone: "America/New_York",
-        hour12: false,
-      });
-
-      setCetTime(cet.split(":").slice(0, -1).join(":") + " CET");
-      setEstTime(est.split(":").slice(0, -1).join(":") + " EST");
+      calculateTime();
     }, 1000);
 
     return () => clearInterval(interval);
@@ -57,7 +61,7 @@ const ClockNew = () => {
   };
 
   return (
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-screen w-screen max-w-[375px] max-h-[375px] md:max-w-[600px] md:max-h-[600px] lg:max-w-[700px] lg:max-h-[700px] xl:max-h-screen xl:max-w-screen ">
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-screen w-screen max-w-[400px] max-h-[400px] md:max-w-[600px] md:max-h-[600px] lg:max-w-[700px] lg:max-h-[700px] xl:max-h-screen xl:max-w-screen ">
       <div className="flex rounded-full items-center justify-center relative w-full h-full  text-2xl md:text-5xl lg:text-6xl ">
         {labels.map((label, index) => (
           <label

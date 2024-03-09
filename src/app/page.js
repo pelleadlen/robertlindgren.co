@@ -1,8 +1,14 @@
+"use client";
 import ClockNew from "./components/clockNew";
-
+import { useState, useEffect } from "react";
 import Footer from "./components/footer";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 2 } },
+  };
   return (
     <main className=" h-svh relative p-6 flex-col items-center justify-between text-sm tracking-tight">
       <div className="w-[180px]">
@@ -27,7 +33,17 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <ClockNew />
+      <AnimatePresence>
+        <motion.div
+          variants={fadeIn}
+          transition="transition"
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+        >
+          <ClockNew />
+        </motion.div>
+      </AnimatePresence>
       <Footer />
     </main>
   );
