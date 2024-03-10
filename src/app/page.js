@@ -19,7 +19,8 @@ export default function Home() {
         </h2>
         <div className="flex gap-2 mb-1">
           <a
-            href="https://www.linkedin.com"
+            target="_blank"
+            href="https://calendar.notion.so/meet/robertlindgen/qlk594eik"
             className="bg-white text-black px-1"
           >
             Book meeting
