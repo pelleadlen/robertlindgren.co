@@ -61,8 +61,8 @@ const ClockNew = () => {
   };
 
   return (
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-screen w-screen max-w-[400px] max-h-[400px] md:max-w-[600px] md:max-h-[600px] lg:max-w-[700px] lg:max-h-[700px] xl:max-h-screen xl:max-w-screen ">
-      <div className="flex rounded-full items-center justify-center relative w-full h-full  text-2xl md:text-5xl lg:text-6xl ">
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-screen w-screen max-w-[400px] max-h-[400px] md:max-w-[600px] md:max-h-[600px] lg:max-w-[700px] lg:max-h-[700px] xl:max-h-screen  xl:max-w-screen ">
+      <div className="flex rounded-full  items-center justify-center relative w-full h-full  text-2xl md:text-5xl lg:text-6xl ">
         {labels.map((label, index) => (
           <label
             className=" absolute inset-[40px] text-center"
@@ -85,7 +85,9 @@ const ClockNew = () => {
             style={{ transform: `rotate(${hourRotation}deg)` }}
             className="bg-black w-[80px] absolute flex items-center justify-center bottom-1/2 origin-bottom rotate-180  h-2/4 text-2xl md:text-5xl lg:text-6xl"
           >
-            <p className="-rotate-90 text-nowrap">{cetTime}</p>
+            <p className="-rotate-90 whitespace-nowrap  text-nowrap">
+              {cetTime}
+            </p>
           </div>
 
           {/* MINUTE EST */}
@@ -93,7 +95,9 @@ const ClockNew = () => {
             style={{ transform: `rotate(${minuteRotation}deg)` }}
             className="bg-black w-[32px] md:w-[48px] lg:w-[80px] absolute flex items-center justify-center bottom-1/2 origin-bottom   h-2/4 text-2xl md:text-5xl lg:text-6xl"
           >
-            <p className="-rotate-90 text-nowrap">{estTime}</p>
+            <p className="-rotate-90 whitespace-nowrap text-nowrap">
+              {estTime}
+            </p>
           </div>
 
           {/* SECONDS */}
