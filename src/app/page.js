@@ -1,6 +1,6 @@
 "use client";
 import ClockNew from "./components/clockNew";
-import { useState, useEffect } from "react";
+
 import Footer from "./components/footer";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -19,7 +19,6 @@ export default function Home() {
         </h2>
         <div className="flex gap-2 mb-1">
           <a
-            target="_blank"
             href="https://calendar.notion.so/meet/robertlindgen/d3p7s4eny"
             className="bg-white text-black px-1"
           >

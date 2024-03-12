@@ -61,8 +61,8 @@ const ClockNew = () => {
   };
 
   return (
-    <div className="absolute top-[65%] md:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-screen w-screen max-w-[400px] max-h-[400px] md:max-w-[600px] md:max-h-[600px] lg:max-w-[700px] lg:max-h-[700px] xl:max-h-[95vh]  xl:max-w-[95vw] ">
-      <div className="flex rounded-full  items-center justify-center relative w-full h-full  text-2xl md:text-5xl lg:text-6xl xl:text-[88px] ">
+    <div className="absolute top-[65%] md:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-screen w-screen max-w-[400px] max-h-[400px] md:max-w-[600px] md:max-h-[600px] lg:max-w-[700px] lg:max-h-[700px] xl:max-h-screen  xl:max-w-screen ">
+      <div className="flex rounded-full  items-center justify-center relative w-full h-full  text-2xl md:text-5xl lg:text-6xl xl:text-[88px] -z-50   ">
         {labels.map((label, index) => (
           <label
             className=" absolute inset-[40px] text-center"
