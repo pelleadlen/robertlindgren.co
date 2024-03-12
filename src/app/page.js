@@ -10,7 +10,7 @@ export default function Home() {
     visible: { opacity: 1, transition: { duration: 2 } },
   };
   return (
-    <main className=" h-svh relative p-6 flex-col items-center justify-between text-sm tracking-tight">
+    <main className=" h-svh relative p-5 flex-col items-center justify-between text-sm tracking-[-0.015em]">
       <div className="w-[180px]">
         <h1 className="mb-6">Robert Lindgren</h1>
         <h2 className="mb-4">
@@ -23,7 +23,7 @@ export default function Home() {
             href="https://calendar.notion.so/meet/robertlindgen/d3p7s4eny"
             className="bg-white text-black px-1"
           >
-            Book meeting
+            Book a meeting
           </a>
           <p>or:</p>
         </div>
