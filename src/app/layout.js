@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Head from "next/head";
+import {GoogleTagManager} from "@next/third-parties/google";
 
 const display = localFont({
   src: [
@@ -17,7 +19,13 @@ export default function RootLayout({ children }) {
   const bodyClass = `${display.className}`;
   return (
     <html lang="en">
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className={bodyClass}>{children}</body>
+      <GoogleTagManager gtmId="G-Q90703FXS7"/>
     </html>
   );
 }
