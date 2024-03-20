@@ -62,7 +62,7 @@ const ClockNew = () => {
 
   return (
     <div className="absolute top-[62%] md:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-screen w-screen max-w-[400px] max-h-[400px] md:max-w-[600px] md:max-h-[600px] lg:max-w-[700px] lg:max-h-[700px] xl:max-h-screen  xl:max-w-screen ">
-      <div className="flex rounded-full  items-center justify-center relative w-full h-full  text-2xl md:text-5xl lg:text-6xl xl:text-[88px] -z-50   ">
+      <div className="flex rounded-full  items-center justify-center relative w-full h-full text-[1.75rem] leading-[2rem]     md:text-5xl lg:text-6xl xl:text-[88px] -z-50   ">
         {labels.map((label, index) => (
           <label
             className=" absolute inset-[40px] text-center"
@@ -78,12 +78,12 @@ const ClockNew = () => {
         {/* Indicator Wrapper */}
         <div className="w-full h-full text-[64px]  flex relative items-center justify-center">
           {/* INDICATOR */}
-          <div className=" h-6 w-6 md:h-9 md:w-9 border-[#FF0000] bg-black border-[2px] md:border-[5px] rounded-full z-50" />
+          <div className=" h-4  w-4 md:h-9 md:w-9 border-[#FF0000] bg-black border-[2px] md:border-[5px] rounded-full z-50" />
 
           {/* HOUR CET */}
           <div
             style={{ transform: `rotate(${hourRotation}deg)` }}
-            className="bg-black w-[80px] absolute flex items-center justify-center bottom-1/2 origin-bottom rotate-180  h-[40%]  md:h-2/4 text-2xl md:text-5xl lg:text-6xl xl:text-[88px]"
+            className="bg-black w-[80px] absolute flex items-center justify-center bottom-1/2 origin-bottom rotate-180  h-[40%]  md:h-2/4 text-[1.75rem] leading-[2rem] md:text-5xl lg:text-6xl xl:text-[88px]"
           >
             <p className="-rotate-90 text-left whitespace-nowrap  text-nowrap">
               {cetTime}
@@ -93,7 +93,7 @@ const ClockNew = () => {
           {/* MINUTE EST */}
           <div
             style={{ transform: `rotate(${minuteRotation}deg)` }}
-            className="bg-black w-[32px] md:w-[48px] lg:w-[80px] absolute flex items-center justify-center bottom-1/2 origin-bottom  h-[40%]  md:h-2/4 text-2xl md:text-5xl lg:text-6xl xl:text-[88px]"
+            className="bg-black w-[32px] md:w-[48px] lg:w-[80px] absolute flex items-center justify-center bottom-1/2 origin-bottom  h-[40%]  md:h-2/4 text-[1.75rem] leading-[2rem] md:text-5xl lg:text-6xl xl:text-[88px]"
           >
             <p className="-rotate-90 text-left whitespace-nowrap text-nowrap">
               {estTime}
