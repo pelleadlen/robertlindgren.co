@@ -19,7 +19,7 @@ export default function Home() {
         </h2>
         <div className="flex gap-2 mb-1">
           <a
-            href="https://calendar.notion.so/meet/robertlindgen/lgnc84ego"
+            href="https://calendar.notion.so/meet/robertlindgen/0nmo4eq0"
             className="bg-white text-black px-1"
           >
             Book a meeting
