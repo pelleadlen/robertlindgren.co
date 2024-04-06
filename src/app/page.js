@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className="mb-6">Robert Lindgren</h1>
         <h2 className="mb-4">
           Designing digital products and brands with people I look up to. Let me
-          show you!
+          show you.
         </h2>
         <div className="flex gap-2 mb-1">
           <a

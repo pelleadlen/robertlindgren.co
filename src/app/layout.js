@@ -12,7 +12,7 @@ const display = localFont({
 export const metadata = {
   title: "Robert Lindgren",
   description:
-    "Robert has been involved in a wide variety of international digital products, digital design systems, brand identity systems, envisioning design, concept development, communication design, interactive prototypes, logo design, motion design and, creative leadership.Swedish Design Awards Winner 2011, Awwwards Winner 2017. Visuelt, Grafill Jury 2023.Selected client collaborations from EY Doberman: LEGO, MoMA, Spotify, Google, Starbucks, Oscar, Wealthsimple and, IBM.",
+    "Digital Designer and Director Robert has been involved in a wide variety of international digital products, digital design systems, brand identity systems, envisioning design, concept development, communication design, interactive prototypes, logo design, motion design and, creative leadership. Swedish Design Awards Winner 2011, Awwwards Winner 2017. Visuelt, Grafill Jury 2023.Selected client collaborations from EY Doberman: LEGO, MoMA, Spotify, Google, Starbucks, Oscar, Wealthsimple and, IBM.",
 };
 
 export default function RootLayout({ children }) {

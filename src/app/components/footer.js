@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="flex gap-4 fixed bottom-5   text-white">
       <p>ⓇⓁ㒛</p>
       <p>2024</p>
-      <p>Lindgren Design AB</p>
+      <p>Studio Robert AB</p>
     </footer>
   );
 };
